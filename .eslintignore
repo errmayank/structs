@@ -1,0 +1,7 @@
+# build
+/lib
+/coverage
+
+# config
+!.lintstagedrc.js
+!.prettierrc.js

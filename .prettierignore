@@ -1,0 +1,9 @@
+# dependencies
+node_modules
+
+# build
+/lib
+/coverage
+
+# lockfile
+package-lock.json

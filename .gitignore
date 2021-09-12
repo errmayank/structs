@@ -1,0 +1,23 @@
+# logs
+logs
+*.log
+yarn-debug.log*
+yarn-error.log*
+
+# dependencies
+node_modules
+
+# cache directories
+.npm
+.eslintcache
+
+# env files
+.env
+
+# build
+/lib
+
+# misc
+.DS_Store
+.vscode
+/coverage
