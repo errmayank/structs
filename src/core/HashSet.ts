@@ -23,12 +23,16 @@ export class HashSet<T extends string | number | bigint> {
    * i.e string, number or bigint.
    *
    * @param Value - Value to insert
+   * @param throwError - Boolean specifying whether to throw TypeError on invalid
+   * insert type or not, defaults to false.
    * @returns boolean
    */
-  public insert(value: T): boolean {
+  public insert(value: T, throwError: boolean = false): boolean {
     const type = typeof value
     if (type !== 'string' && type !== 'number' && type !== 'bigint') {
-      throw new TypeError(`Cannot insert ${value} of type ${type} in a HashSet`)
+      if (throwError === true) {
+        throw new TypeError(`Cannot insert ${value} of type ${type} in a HashSet`)
+      } else return false
     }
 
     if (Str(value) in this.#data) {
@@ -42,7 +46,7 @@ export class HashSet<T extends string | number | bigint> {
    * Removes value from the HashSet. Returns true or false depending on whether
    * given value was successfully removed from the HashSet or not.
    *
-   * @param Value - Value to remove
+   * @param value - Value to remove
    * @returns boolean
    */
   public remove(value: T): boolean {
@@ -57,7 +61,7 @@ export class HashSet<T extends string | number | bigint> {
    * Returns true or false depending on whether given value exists in
    * the HashSet or not.
    *
-   * @param Value - Value to check
+   * @param value - Value to check
    * @returns boolean
    */
   public contains(value: T): boolean {
