@@ -1,6 +1,6 @@
 {
   "name": "structs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A collection of general purpose data structures for JavaScript/TypeScript",
   "jsdelivr": "lib/index.min.js",
   "unpkg": "lib/index.min.js",
