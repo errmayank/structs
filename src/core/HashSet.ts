@@ -2,7 +2,8 @@ import { Str } from '../utils/Conv'
 
 export class HashSet<T extends string | number | bigint> {
   #data: { [key in string]: T } = {}
-  constructor(values: any[] = []) {
+
+  constructor(values: T[] = []) {
     values.forEach(value => this.insert(value))
   }
 
@@ -27,7 +28,7 @@ export class HashSet<T extends string | number | bigint> {
   public insert(value: T): boolean {
     const type = typeof value
     if (type !== 'string' && type !== 'number' && type !== 'bigint') {
-      throw new Error(`Cannot insert ${value}, of type ${type} in a HashSet`)
+      throw new TypeError(`Cannot insert ${value} of type ${type} in a HashSet`)
     }
 
     if (Str(value) in this.#data) {
