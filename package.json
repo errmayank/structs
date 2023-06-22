@@ -52,7 +52,7 @@
     "husky": "^7.0.2",
     "jest": "^27.1.1",
     "lint-staged": "^11.1.2",
-    "prettier": "^2.4.0",
+    "prettier": "^2.8.8",
     "rimraf": "^3.0.2",
     "rollup": "^2.56.3",
     "rollup-plugin-analyzer": "^4.0.0",
